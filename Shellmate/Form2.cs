@@ -30,15 +30,39 @@ namespace Shellmate
         public CommandEditor()
         {
             InitializeComponent();
+            LoadCommandTable();
 
-            foreach (String row in commandRow.Command)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-            this.dataGridView1.Rows.Add(commandRow.Command.GetLength(0));
             this.Controls.Add(HomeMenuStrip);
 
         }
+
+
+        /// <summary>
+        /// Load the command table
+        /// </summary>
+        private void LoadCommandTable()
+        {
+            if (commandRow.Command == null || commandRow.Command.GetLength(0) == 0)
+            {
+                return;
+            }
+
+
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < commandRow.Command.GetLength(0); i++)
+            {
+                int rowIndex = dataGridView1.Rows.Add();
+
+                for (int j = 0; j < commandRow.Command.GetLength(1); j++)
+                {
+                    if (commandRow.Command[i, j] != null) 
+                        dataGridView1.Rows[rowIndex].Cells[j].Value = commandRow.Command[i, j];
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// Move the window
@@ -49,8 +73,8 @@ namespace Shellmate
         {
             if (e.Button == MouseButtons.Left)
             {
-                ReleaseCapture(); // Libère la capture de la souris
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0); // Simule un clic sur la barre de titre
+                ReleaseCapture(); 
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0); 
             }
         }
 
@@ -66,17 +90,30 @@ namespace Shellmate
 
         private void button1_Click(object sender, EventArgs e)
         {
-            commandRow.Command = new string[dataGridView1.RowCount, 2];
+            int rowCount = dataGridView1.Rows.Count - 1; 
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            List<string[]> newCommands = new List<string[]>(); 
+
+            for (int i = 0; i < rowCount; i++)
             {
-                if (row.Cells[0].Value != null && row.Cells[1].Value != null)
+                if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[1].Value != null)
                 {
-                    commandRow.Command[row.Index, 0] = row.Cells[0].Value.ToString();
-                    commandRow.Command[row.Index, 1] = row.Cells[1].Value.ToString();
+                    string cmdKey = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    string cmdValue = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    newCommands.Add(new string[] { cmdKey, cmdValue });
                 }
             }
-            commandRow.writeCommand(commandRow.Command);
+
+            // Conversion en tableau 2D
+            commandRow.Command = new string[newCommands.Count, 2];
+            for (int i = 0; i < newCommands.Count; i++)
+            {
+                commandRow.Command[i, 0] = newCommands[i][0];
+                commandRow.Command[i, 1] = newCommands[i][1];
+            }
+
+            commandRow.SaveCommands(); // Sauvegarde dans le JSON
         }
+
     }
 }

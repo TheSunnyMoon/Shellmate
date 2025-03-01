@@ -90,8 +90,10 @@ namespace Shellmate
             }
 
             string command = CommandShell.Text;
+            CommandRow commandRow = new CommandRow();
+            commandRow.ExecuteCommand(command);
+            this.Close();
 
-            
         }
 
         /// <summary>
