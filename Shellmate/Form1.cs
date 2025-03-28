@@ -80,14 +80,13 @@ namespace Shellmate
         {
             if (m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
             {
-                // Révèle la fenêtre
+                // Révèle la fenêtre et force le focus sur le contrôle CommandShell
                 this.Show();
                 this.WindowState = FormWindowState.Normal;
                 this.BringToFront();
+                CommandShell.Focus();
             }
             base.WndProc(ref m);
-            CommandShell.Focus();
-
         }
 
         /// <summary>
