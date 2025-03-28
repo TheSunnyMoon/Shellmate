@@ -49,7 +49,7 @@ namespace Shellmate
             // HomeMenuStrip
             // 
             this.HomeMenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
-            this.HomeMenuStrip.Font = new System.Drawing.Font("Jack Armstrong", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeMenuStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeMenuStrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(254)))));
             this.HomeMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -65,7 +65,7 @@ namespace Shellmate
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(32, 20);
             this.fileToolStripMenuItem.Text = "file";
             // 
             // shellToolStripMenuItem
@@ -73,13 +73,13 @@ namespace Shellmate
             this.shellToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editCommandsToolStripMenuItem});
             this.shellToolStripMenuItem.Name = "shellToolStripMenuItem";
-            this.shellToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.shellToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.shellToolStripMenuItem.Text = "shell";
             // 
             // editCommandsToolStripMenuItem
             // 
             this.editCommandsToolStripMenuItem.Name = "editCommandsToolStripMenuItem";
-            this.editCommandsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editCommandsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.editCommandsToolStripMenuItem.Text = "edit commands";
             this.editCommandsToolStripMenuItem.Click += new System.EventHandler(this.editCommandsToolStripMenuItem_Click);
             // 
@@ -89,26 +89,26 @@ namespace Shellmate
             this.wallpaperToolStripMenuItem,
             this.colorsToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.windowToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.windowToolStripMenuItem.Text = "window";
             // 
             // wallpaperToolStripMenuItem
             // 
             this.wallpaperToolStripMenuItem.Name = "wallpaperToolStripMenuItem";
-            this.wallpaperToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.wallpaperToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.wallpaperToolStripMenuItem.Text = "wallpaper";
             // 
             // colorsToolStripMenuItem
             // 
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
-            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.colorsToolStripMenuItem.Text = "colors";
             // 
             // CommandShell
             // 
             this.CommandShell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CommandShell.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CommandShell.Font = new System.Drawing.Font("Jack Armstrong", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CommandShell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommandShell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(38)))));
             this.CommandShell.Location = new System.Drawing.Point(95, 115);
             this.CommandShell.Name = "CommandShell";
@@ -128,11 +128,11 @@ namespace Shellmate
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Jack Armstrong", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(28)))));
             this.label1.Location = new System.Drawing.Point(7, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 13);
+            this.label1.Size = new System.Drawing.Size(14, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "$";
             // 
@@ -160,7 +160,7 @@ namespace Shellmate
             this.CloseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.CloseButton.FlatAppearance.BorderSize = 0;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Location = new System.Drawing.Point(377, 2);
+            this.CloseButton.Location = new System.Drawing.Point(378, 2);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(20, 20);
             this.CloseButton.TabIndex = 0;
