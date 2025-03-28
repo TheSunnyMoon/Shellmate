@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -33,6 +34,14 @@ namespace Shellmate
             InitializeComponent();
             this.Controls.Add(HomeMenuStrip);
             CommandShell.Select();
+        }
+
+        private static void AddApplicationToStartup()
+        {
+            // Ouvre la clé de registre pour le démarrage de l'utilisateur courant
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+            // Ajoute (ou met à jour) la valeur "Shellmate" avec le chemin de votre exécutable
+            key.SetValue("Shellmate", Application.ExecutablePath);
         }
 
         /// <summary>
@@ -77,6 +86,8 @@ namespace Shellmate
                 this.BringToFront();
             }
             base.WndProc(ref m);
+            CommandShell.Focus();
+
         }
 
         /// <summary>
@@ -132,6 +143,26 @@ namespace Shellmate
         {
             CommandEditor commandEditor = new CommandEditor();
             commandEditor.Show();
+        }
+
+        /// <summary>
+        /// on shown focus on the command shell
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            CommandShell.Focus(); // Met le focus sur le champ de commande
+        }
+
+        /// <summary>
+        /// add app to startup
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addToStartupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddApplicationToStartup();
         }
     }
 }

@@ -42,6 +42,7 @@ namespace Shellmate
             this.label1 = new System.Windows.Forms.Label();
             this.ExecuteButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.addToStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HomeMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +88,8 @@ namespace Shellmate
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.wallpaperToolStripMenuItem,
-            this.colorsToolStripMenuItem});
+            this.colorsToolStripMenuItem,
+            this.addToStartupToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.windowToolStripMenuItem.Text = "window";
@@ -167,6 +169,13 @@ namespace Shellmate
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // addToStartupToolStripMenuItem
+            // 
+            this.addToStartupToolStripMenuItem.Name = "addToStartupToolStripMenuItem";
+            this.addToStartupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToStartupToolStripMenuItem.Text = "add to startup";
+            this.addToStartupToolStripMenuItem.Click += new System.EventHandler(this.addToStartupToolStripMenuItem_Click);
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +218,7 @@ namespace Shellmate
         private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem addToStartupToolStripMenuItem;
     }
 }
 
